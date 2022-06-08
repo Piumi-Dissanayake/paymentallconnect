@@ -8,25 +8,38 @@ import 'package:date_time_picker/date_time_picker.dart';
 import 'package:paymentallconnect/receipt.dart';
 
 class receiptUser extends StatelessWidget {
-  String Date, ServiceProviderName, UserName, VehicleFault;
+  String ServiceProviderName,
+      UserName,
+      VehicleFault,
+      InspectionValue,
+      Discount,
+      Balance;
 
   receiptUser({
-    required this.Date,
+    // required this.Date,
     required this.ServiceProviderName,
     required this.UserName,
     required this.VehicleFault,
+    required this.InspectionValue,
+    required this.Discount,
+    required this.Balance,
   });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-      children: [
-        Text('Date : ${Date}'),
-        Text('Service Provider Name : ${ServiceProviderName}'),
-        Text('User Name : ${UserName}'),
-        Text('Vehicle Fault : ${VehicleFault}'),
-      ],
+        body: Center(
+      child: Column(
+        children: [
+          //Text('Date : ${Date}'),
+          Text('Service Provider Name : ${ServiceProviderName}'),
+          Text('User Name : ${UserName}'),
+          Text('Vehicle Fault : ${VehicleFault}'),
+          Text('Inspection Value : ${InspectionValue}'),
+          Text('Discount : ${Discount}'),
+          Text('Balance : ${Balance}'),
+        ],
+      ),
     ));
   }
 }

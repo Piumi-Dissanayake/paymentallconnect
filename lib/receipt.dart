@@ -15,10 +15,21 @@ class Receipts extends StatefulWidget {
 }
 
 class _ReceiptsState extends State<Receipts> {
-  TextEditingController _Date = new TextEditingController();
+  // TextEditingController _Date = new TextEditingController();
   TextEditingController _ServiceProviderName = new TextEditingController();
   TextEditingController _UserName = new TextEditingController();
   TextEditingController _VehicleFault = new TextEditingController();
+  TextEditingController _Inspection = new TextEditingController();
+  TextEditingController _Discount = new TextEditingController();
+  TextEditingController _balance = new TextEditingController();
+
+  double inspectionvalue = 0.0;
+
+  double discountvalue = 0.0;
+
+  double resultValue = 0.0;
+
+  double balanceValue = 0.0;
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +40,8 @@ class _ReceiptsState extends State<Receipts> {
         backgroundColor: Color(0XFF128C7E),
       ),
       body: Scaffold(
-          body: Column(
-        children: [
-          DateTimePicker(
+          body: Column(children: [
+        /*DateTimePicker(
             controller: _Date,
             initialValue: '',
             firstDate: DateTime(2000),
@@ -44,53 +54,83 @@ class _ReceiptsState extends State<Receipts> {
               return null;
             },
             onSaved: (val) => print(val),
-          ),
-          Padding(
-              padding: const EdgeInsets.all(0.0),
-              child: TextField(
-                  controller: _ServiceProviderName,
-                  decoration: InputDecoration(
-                      icon: Icon(Icons.people),
-                      labelText: ' Service Provider Name'))),
-          Padding(
-              padding: const EdgeInsets.all(0.0),
-              child: TextField(
-                  controller: _UserName,
-                  decoration: InputDecoration(
-                      icon: Icon(Icons.people), labelText: 'User name'))),
-          Padding(
-              padding: const EdgeInsets.all(0.0),
-              child: TextField(
-                  controller: _VehicleFault,
-                  decoration: InputDecoration(
-                      icon: Icon(Icons.description),
-                      labelText: 'Vehicle Fault'))),
-          SizedBox(
-            height: 20,
-          ),
-          Divider(color: Colors.black),
-          SizedBox(
-            height: 20,
-          ),
-          ButtonBar(
-            children: [
-              RaisedButton(
-                child: Text("Send Details"),
-                textColor: Colors.white,
-                color: Colors.green,
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => receiptUser(
-                          Date: _Date.text,
+          ),*/
+        Padding(
+            padding: const EdgeInsets.all(0.0),
+            child: TextField(
+                controller: _ServiceProviderName,
+                decoration: InputDecoration(
+                    icon: Icon(Icons.people),
+                    labelText: ' Service Provider Name'))),
+        Padding(
+            padding: const EdgeInsets.all(0.0),
+            child: TextField(
+                controller: _UserName,
+                decoration: InputDecoration(
+                    icon: Icon(Icons.people), labelText: 'User name'))),
+        Padding(
+            padding: const EdgeInsets.all(0.0),
+            child: TextField(
+                controller: _VehicleFault,
+                decoration: InputDecoration(
+                    icon: Icon(Icons.description),
+                    labelText: 'Vehicle Fault'))),
+        SizedBox(
+          height: 20,
+        ),
+        Padding(
+            padding: const EdgeInsets.all(0.0),
+            child: TextField(
+                controller: _Inspection,
+                decoration: InputDecoration(
+                    icon: Icon(Icons.description),
+                    labelText: 'Inspection Value'))),
+        Padding(
+            padding: const EdgeInsets.all(0.0),
+            child: TextField(
+                controller: _Discount,
+                decoration: InputDecoration(
+                    icon: Icon(Icons.description), labelText: 'Discount'))),
+        SizedBox(
+          height: 20,
+        ),
+        Text("Balance = $balanceValue",
+            style: TextStyle(
+              fontSize: 20,
+            )),
+        Divider(color: Colors.black),
+        SizedBox(
+          height: 20,
+        ),
+        ButtonBar(
+          children: [
+            RaisedButton(
+              child: Text("Send Details"),
+              textColor: Colors.white,
+              color: Colors.green,
+              onPressed: () {
+                inspectionvalue = double.parse(_Inspection.text);
+                discountvalue = double.parse(_Discount.text);
+
+                resultValue = balanceValue - (inspectionvalue - discountvalue);
+
+                setState(() {
+                  balanceValue = resultValue;
+                });
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => receiptUser(
                           ServiceProviderName: _ServiceProviderName.text,
                           UserName: _UserName.text,
-                          VehicleFault: _VehicleFault.text)));
-                },
-              ),
-            ],
-          )
-        ],
-      )),
+                          VehicleFault: _VehicleFault.text,
+                          InspectionValue: _Inspection.text,
+                          Discount: _Discount.text,
+                          Balance: _balance.text,
+                        )));
+              },
+            ),
+          ],
+        )
+      ])),
     );
   }
 }
