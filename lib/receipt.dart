@@ -15,7 +15,8 @@ class Receipts extends StatefulWidget {
 }
 
 class _ReceiptsState extends State<Receipts> {
-  // TextEditingController _Date = new TextEditingController();
+  //TextEditingController _Date = new TextEditingController();
+  var _date = DateTime.now().toString();
   TextEditingController _ServiceProviderName = new TextEditingController();
   TextEditingController _UserName = new TextEditingController();
   TextEditingController _VehicleFault = new TextEditingController();
@@ -39,22 +40,33 @@ class _ReceiptsState extends State<Receipts> {
         centerTitle: true,
         backgroundColor: Color(0XFF128C7E),
       ),
-      body: Scaffold(
-          body: Column(children: [
-        /*DateTimePicker(
-            controller: _Date,
-            initialValue: '',
-            firstDate: DateTime(2000),
-            lastDate: DateTime(2100),
-            icon: Icon(Icons.calendar_today),
-            dateLabelText: 'Expiration Date',
-            onChanged: (val) => print(val),
-            validator: (val) {
-              print(val);
-              return null;
-            },
-            onSaved: (val) => print(val),
-          ),*/
+      body: SingleChildScrollView(
+          child: Column(children: [
+        DateTimePicker(
+          //controller: _Date,
+          initialValue: DateTime.now().toString(),
+          firstDate: DateTime(2000),
+          lastDate: DateTime(2100),
+          icon: Icon(Icons.calendar_today),
+          dateLabelText: 'Expiration Date',
+          onChanged: (val) {
+            print(_date);
+            setState(() {
+              _date = val.toString().substring(0, 10);
+            });
+            print(_date);
+          },
+          validator: (val) {
+            //print(val);
+            return null;
+          },
+          onSaved: (val) {
+            //rint(val);
+            // setState(() {
+            //   _date = val.toString().substring(0, 10);
+            // });
+          },
+        ),
         Padding(
             padding: const EdgeInsets.all(0.0),
             child: TextField(
@@ -117,6 +129,7 @@ class _ReceiptsState extends State<Receipts> {
                 setState(() {
                   balanceValue = resultValue;
                 });
+                print("the selected date is ${_date}");
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => receiptUser(
                           ServiceProviderName: _ServiceProviderName.text,
@@ -124,7 +137,8 @@ class _ReceiptsState extends State<Receipts> {
                           VehicleFault: _VehicleFault.text,
                           InspectionValue: _Inspection.text,
                           Discount: _Discount.text,
-                          Balance: _balance.text,
+                          Balance: resultValue.toString(),
+                          Date: _date,
                         )));
               },
             ),
