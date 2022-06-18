@@ -34,10 +34,11 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 245, 213, 249),
       appBar: AppBar(
         title: Text('HomePage'),
         centerTitle: true,
-        backgroundColor: Color(0XFF128C7E),
+        backgroundColor: Colors.purple,
       ),
       drawer: MainDrawer(),
     );

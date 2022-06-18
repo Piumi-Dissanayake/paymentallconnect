@@ -19,10 +19,11 @@ class _FailedPaymentsState extends State<FailedPayments> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 245, 213, 249),
       appBar: AppBar(
         title: Text('Payment Fail'),
         centerTitle: true,
-        backgroundColor: Color(0XFF128C7E),
+        backgroundColor: Colors.purple,
       ),
       body: Center(
         child: Column(

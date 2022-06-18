@@ -23,10 +23,11 @@ class _SucessPaymentState extends State<SucessPayment> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 245, 213, 249),
       appBar: AppBar(
         title: Text('Payment Success'),
         centerTitle: true,
-        backgroundColor: Color(0XFF128C7E),
+        backgroundColor: Colors.purple,
       ),
       body: Center(
         child: Column(
@@ -62,7 +63,7 @@ class _SucessPaymentState extends State<SucessPayment> {
             Card(
               elevation: 50,
               shadowColor: Colors.black,
-              color: Colors.yellow,
+              color: Colors.pinkAccent,
               child: SizedBox(
                 width: 300,
                 child: Padding(
@@ -96,14 +97,14 @@ class _SucessPaymentState extends State<SucessPayment> {
                                 'Discount    ',
                                 style: TextStyle(
                                   fontSize: 18,
-                                  color: Colors.red,
+                                  color: Colors.black,
                                 ),
                               ),
                               Text(
                                 'Total           ',
                                 style: TextStyle(
                                   fontSize: 18,
-                                  color: Colors.red,
+                                  color: Colors.black,
                                 ),
                               ),
                             ],
@@ -131,14 +132,14 @@ class _SucessPaymentState extends State<SucessPayment> {
                                 '-',
                                 style: TextStyle(
                                   fontSize: 18,
-                                  color: Colors.red,
+                                  color: Colors.black,
                                 ),
                               ),
                               Text(
                                 'Rs. 25,000',
                                 style: TextStyle(
                                   fontSize: 18,
-                                  color: Colors.red,
+                                  color: Colors.black,
                                 ),
                               ),
                             ],

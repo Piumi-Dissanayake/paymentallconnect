@@ -34,10 +34,11 @@ class _ReceiptsState extends State<Receipts> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
+      backgroundColor: Color.fromARGB(255, 245, 213, 249),
       appBar: AppBar(
         title: Text('Receipt Details'),
         centerTitle: true,
-        backgroundColor: Color(0XFF128C7E),
+        backgroundColor: Colors.purple,
       ),
       body: SingleChildScrollView(
           child: Column(children: [
@@ -111,7 +112,7 @@ class _ReceiptsState extends State<Receipts> {
             RaisedButton(
               child: Text("Send Details"),
               textColor: Colors.white,
-              color: Colors.green,
+              color: Colors.purple,
               onPressed: () {
                 inspectionvalue = double.parse(_Inspection.text);
                 discountvalue = double.parse(_Discount.text);

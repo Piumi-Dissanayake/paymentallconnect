@@ -29,10 +29,11 @@ class receiptUser extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 245, 213, 249),
       appBar: AppBar(
         title: Text('Receipt'),
         centerTitle: true,
-        backgroundColor: Color(0XFF128C7E),
+        backgroundColor: Colors.purple,
       ),
       body: Center(
           child: Column(
@@ -56,7 +57,7 @@ class receiptUser extends StatelessWidget {
                 RaisedButton(
                   child: Text("Pay"),
                   textColor: Colors.white,
-                  color: Colors.green,
+                  color: Colors.purple,
                   onPressed: () {
                     Navigator.push(
                       context,

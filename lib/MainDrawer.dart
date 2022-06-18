@@ -16,7 +16,7 @@ class _MainDrawerState extends State<MainDrawer> {
           Container(
             width: double.infinity,
             padding: EdgeInsets.all(20),
-            color: Color(0XFF128C7C),
+            color: Colors.purple,
             child: Center(
               child: Column(
                 children: [
