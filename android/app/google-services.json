@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "776421822689",
-    "project_id": "payment-7cc75",
-    "storage_bucket": "payment-7cc75.appspot.com"
+    "project_number": "20913902693",
+    "project_id": "paymentprocess-df083",
+    "storage_bucket": "paymentprocess-df083.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:776421822689:android:e906f2b93dae592b2027a0",
+        "mobilesdk_app_id": "1:20913902693:android:e18eb9bad718d51c43a28c",
         "android_client_info": {
           "package_name": "com.example.paymentallconnect"
         }
       },
       "oauth_client": [
         {
-          "client_id": "776421822689-b56njnk8h4v4jm6b4g3vmci8b43un67n.apps.googleusercontent.com",
+          "client_id": "20913902693-nrv21ug5tsgbj05tm48s025d81r6ca8j.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCHhdnQ1wgXoDpz-bq5p23Uv35Xr-VUuFM"
+          "current_key": "AIzaSyAZVmdbT3R1Iuwi5BWXT0lvkQKfe0SIgDg"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "776421822689-b56njnk8h4v4jm6b4g3vmci8b43un67n.apps.googleusercontent.com",
+              "client_id": "20913902693-nrv21ug5tsgbj05tm48s025d81r6ca8j.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
