@@ -26,10 +26,6 @@ class _MainDrawerState extends State<MainDrawer> {
                       margin: EdgeInsets.only(top: 30, bottom: 10),
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-
-                        /*image: DecorationImage(
-                            image: AssetImage('assets/avator.png'),
-                            fit: BoxFit.fill),*/
                       )),
                   Text(
                     'Piumi',

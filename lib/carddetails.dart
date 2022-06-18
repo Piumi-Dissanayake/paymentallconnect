@@ -65,19 +65,16 @@ class _CardDetailsState extends State<CardDetails> {
                 decoration: InputDecoration(
               icon: Icon(Icons.person),
               labelText: 'Name on Card',
-              //labelStyle: TextStyle(color: Colors.black)),
             )),
             TextField(
                 decoration: InputDecoration(
               icon: Icon(Icons.format_list_numbered_rtl_outlined),
               labelText: 'Card Number',
-              //labelStyle: TextStyle(color: Colors.black)),
             )),
             TextField(
                 decoration: InputDecoration(
               icon: Icon(Icons.money),
               labelText: 'Amount',
-              //labelStyle: TextStyle(color: Colors.black)),
             )),
             DateTimePicker(
               initialValue: '',

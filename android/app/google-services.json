@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "776421822689",
+    "project_id": "payment-7cc75",
+    "storage_bucket": "payment-7cc75.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:776421822689:android:e906f2b93dae592b2027a0",
+        "android_client_info": {
+          "package_name": "com.example.paymentallconnect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "776421822689-b56njnk8h4v4jm6b4g3vmci8b43un67n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHhdnQ1wgXoDpz-bq5p23Uv35Xr-VUuFM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "776421822689-b56njnk8h4v4jm6b4g3vmci8b43un67n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

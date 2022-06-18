@@ -30,8 +30,6 @@ class _SucessPaymentState extends State<SucessPayment> {
       ),
       body: Center(
         child: Column(
-          //mainAxisAlignment: MainAxisAlignment.center,
-          //crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Container(
               height: 70,
@@ -61,22 +59,19 @@ class _SucessPaymentState extends State<SucessPayment> {
             ),
             SizedBox(height: screenHeight * 0.05),
             Divider(color: Colors.black),
-
             Card(
               elevation: 50,
               shadowColor: Colors.black,
               color: Colors.yellow,
               child: SizedBox(
                 width: 300,
-                //height: height * 0.2,
                 child: Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: Column(
                     children: [
                       SizedBox(
                         height: 10,
-                      ), //SizedBox
-                      //SizedBox
+                      ),
                       Row(
                         children: [
                           Column(
@@ -87,7 +82,7 @@ class _SucessPaymentState extends State<SucessPayment> {
                                   style: TextStyle(
                                     fontSize: 18,
                                     color: Colors.black,
-                                  ), //Textstyle
+                                  ),
                                 ),
                               ),
                               Text(
@@ -95,21 +90,21 @@ class _SucessPaymentState extends State<SucessPayment> {
                                 style: TextStyle(
                                   fontSize: 18,
                                   color: Colors.black,
-                                ), //Textstyle
+                                ),
                               ),
                               Text(
                                 'Discount    ',
                                 style: TextStyle(
                                   fontSize: 18,
                                   color: Colors.red,
-                                ), //Textstyle
+                                ),
                               ),
                               Text(
                                 'Total           ',
                                 style: TextStyle(
                                   fontSize: 18,
                                   color: Colors.red,
-                                ), //Textstyle
+                                ),
                               ),
                             ],
                           ),
@@ -123,28 +118,28 @@ class _SucessPaymentState extends State<SucessPayment> {
                                 style: TextStyle(
                                   fontSize: 18,
                                   color: Colors.black,
-                                ), //Textstyle
+                                ),
                               ),
                               Text(
                                 '-',
                                 style: TextStyle(
                                   fontSize: 18,
                                   color: Colors.black,
-                                ), //Textstyle
+                                ),
                               ),
                               Text(
                                 '-',
                                 style: TextStyle(
                                   fontSize: 18,
                                   color: Colors.red,
-                                ), //Textstyle
+                                ),
                               ),
                               Text(
                                 'Rs. 25,000',
                                 style: TextStyle(
                                   fontSize: 18,
                                   color: Colors.red,
-                                ), //Textstyle
+                                ),
                               ),
                             ],
                           ),
@@ -152,12 +147,12 @@ class _SucessPaymentState extends State<SucessPayment> {
                       ),
                       SizedBox(
                         height: 10,
-                      ), //SizedBox
+                      ),
                     ],
-                  ), //Column
-                ), //Padding
-              ), //SizedBox
-            ), //Card
+                  ),
+                ),
+              ),
+            ),
             Divider(color: Colors.black),
             SizedBox(height: screenHeight * 0.05),
             Text(
@@ -212,13 +207,10 @@ class _SucessPaymentState extends State<SucessPayment> {
                       onPressed: () {}),
                 ),
               ],
-            ), //Card
+            ),
           ],
         ),
-      ), //Column
+      ),
     );
-    //Padding
-    //SizedBox
-    //Card
   }
 }

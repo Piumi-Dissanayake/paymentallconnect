@@ -26,8 +26,6 @@ class _FailedPaymentsState extends State<FailedPayments> {
       ),
       body: Center(
         child: Column(
-          //mainAxisAlignment: MainAxisAlignment.center,
-          //crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Container(
               height: 70,
@@ -55,7 +53,6 @@ class _FailedPaymentsState extends State<FailedPayments> {
                 fontSize: 17,
               ),
             ),
-
             SizedBox(height: screenHeight * 0.09),
             Divider(color: Colors.black),
             SizedBox(height: screenHeight * 0.09),
@@ -70,7 +67,7 @@ class _FailedPaymentsState extends State<FailedPayments> {
                       onPressed: () {}),
                 ),
               ],
-            ), //Card
+            ),
           ],
         ),
       ),
