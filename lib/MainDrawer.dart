@@ -69,7 +69,7 @@ class _MainDrawerState extends State<MainDrawer> {
               Navigator.pushNamed(context, '/carddetails');
             },
           ),
-          ListTile(
+          /* ListTile(
             leading: Icon(Icons.arrow_back),
             title: Text(
               'Payment Success',
@@ -88,7 +88,7 @@ class _MainDrawerState extends State<MainDrawer> {
             onTap: () {
               Navigator.pushNamed(context, '/fail');
             },
-          ),
+          ),*/
         ],
       ),
     );
