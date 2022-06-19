@@ -27,6 +27,7 @@ class PaymentPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    /////////
     // Future<void> initPaymentSheet(context,
     //     {required String email, required int amount}) async {
     //   try {
@@ -75,6 +76,7 @@ class PaymentPage extends StatelessWidget {
     //   }
     // }
 
+//////
     return Scaffold(
       appBar: AppBar(
         title: const Text("Stripe Demo App"),
@@ -88,8 +90,10 @@ class PaymentPage extends StatelessWidget {
                 foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
               ),
               onPressed: () async {
+                ////////////////////////////
                 // await initPaymentSheet(context,
                 //     email: "example@gmail.com", amount: 200000);
+                /////////////////////////
               },
               child: const Text(
                 'Buy Laptop for 2000 USD',
