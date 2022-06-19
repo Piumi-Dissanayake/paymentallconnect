@@ -89,6 +89,16 @@ class _MainDrawerState extends State<MainDrawer> {
               Navigator.pushNamed(context, '/fail');
             },
           ),
+          ListTile(
+            leading: Icon(Icons.arrow_back),
+            title: Text(
+              'Report',
+              style: TextStyle(fontSize: 18),
+            ),
+            onTap: () {
+              Navigator.pushNamed(context, '/fail');
+            },
+          ),
         ],
       ),
     );

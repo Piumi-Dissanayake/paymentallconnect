@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:paymentallconnect/carddetails.dart';
 import 'package:paymentallconnect/fail.dart';
@@ -63,6 +64,19 @@ class receiptUser extends StatelessWidget {
                       context,
                       MaterialPageRoute(builder: (context) => (CardDetails())),
                     );
+                  },
+                ),
+                RaisedButton(
+                  child: Text("Report"),
+                  textColor: Colors.white,
+                  color: Colors.purple,
+                  onPressed: () async {
+                    CollectionReference _collectionRef =
+                        FirebaseFirestore.instance.collection('payments');
+                    QuerySnapshot querySnapshot = await _collectionRef.get();
+                    final allData =
+                        querySnapshot.docs.map((doc) => doc.data()).toList();
+                    print(allData);
                   },
                 ),
               ],
