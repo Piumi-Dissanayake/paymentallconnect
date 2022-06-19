@@ -1,4 +1,10 @@
 //import 'dart:js';
+import 'dart:convert';
+import 'dart:developer';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
+import 'package:http/http.dart' as http;
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +22,7 @@ Future<void> main() async {
     routes: {
       '/': (context) => HomeScreen(),
       '/receipt': (context) => Receipts(),
-      '/carddetails': (context) => CardDetails(),
+      // '/carddetails': (context) => CardDetails(),
       '/success': (context) => SucessPayment(),
       '/fail': (context) => FailedPayments(),
     },
