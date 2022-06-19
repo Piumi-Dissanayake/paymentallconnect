@@ -11,11 +11,17 @@ import 'package:flutter/material.dart';
 import 'package:paymentallconnect/MainDrawer.dart';
 import 'package:paymentallconnect/carddetails.dart';
 import 'package:paymentallconnect/fail.dart';
+import 'package:paymentallconnect/gateway.dart';
 import 'package:paymentallconnect/receipt.dart';
 import 'package:paymentallconnect/success.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  Stripe.publishableKey =
+      "pk_test_51JT7jkCTAUDjRNFVfafy4Gskx1KzUNk8nPj8T51zzCPE18fA17DOFO6MqSZVTCxhVCSWGwouDSe0yjcObAznHLW600VBoGyDcg";
+  await Stripe.instance.applySettings();
+
   await Firebase.initializeApp();
   runApp(MaterialApp(
     initialRoute: '/',
@@ -25,6 +31,7 @@ Future<void> main() async {
       // '/carddetails': (context) => CardDetails(),
       '/success': (context) => SucessPayment(),
       '/fail': (context) => FailedPayments(),
+      '/gateway': (context) => Gateway()
     },
   ));
 }
