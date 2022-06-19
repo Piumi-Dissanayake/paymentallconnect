@@ -134,17 +134,12 @@ class _CardDetailsState extends State<CardDetails> {
 
   Future cardpayment(
       {required String NameOnCard, CardNumber, Amount, Date}) async {
-    final docUser = FirebaseFirestore.instance
-        .collection('cardpayments')
-        .doc('Card details');
+    final docUser = FirebaseFirestore.instance.collection('cardpayments').doc();
     final json = {
       'nameOnCard': NameOnCard,
       'cardNumber': CardNumber,
       'Amount': Amount,
       'date': Date,
-      // 'name': name,
-      // 'age': 21,
-      // 'birthday': DateTime(2001, 7, 28),
     };
 
     /// Create doc & write data to Firebase

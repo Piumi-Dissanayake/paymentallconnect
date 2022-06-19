@@ -30,187 +30,151 @@ class _SucessPaymentState extends State<SucessPayment> {
         backgroundColor: Colors.purple,
       ),
       body: Center(
-        child: Column(
-          children: <Widget>[
-            Container(
-              height: 70,
-              padding: const EdgeInsets.only(left: 480.0, bottom: 100.0),
-              decoration: BoxDecoration(
-                color: themeColor,
-                shape: BoxShape.circle,
-              ),
+        child: Column(children: <Widget>[
+          SizedBox(height: 20),
+          Container(
+            height: 70,
+            padding: const EdgeInsets.only(left: 480.0, bottom: 100.0),
+            decoration: BoxDecoration(
+              color: themeColor,
+              shape: BoxShape.circle,
             ),
-            SizedBox(height: screenHeight * 0.09),
-            Text(
-              "Thank You!",
-              style: TextStyle(
-                color: themeColor,
-                fontWeight: FontWeight.w600,
-                fontSize: 25,
-              ),
+          ),
+          SizedBox(height: screenHeight * 0.09),
+          Text(
+            "Thank You!",
+            style: TextStyle(
+              color: themeColor,
+              fontWeight: FontWeight.w600,
+              fontSize: 25,
             ),
-            SizedBox(height: screenHeight * 0.01),
-            Text(
-              "Payment done Successfully",
-              style: TextStyle(
-                color: Colors.black87,
-                fontWeight: FontWeight.w400,
-                fontSize: 17,
-              ),
+          ),
+          SizedBox(height: screenHeight * 0.01),
+          Text(
+            "Payment done Successfully",
+            style: TextStyle(
+              color: Colors.black87,
+              fontWeight: FontWeight.w400,
+              fontSize: 17,
             ),
-            SizedBox(height: screenHeight * 0.05),
-            Divider(color: Colors.black),
-            Card(
-              elevation: 50,
-              shadowColor: Colors.black,
-              color: Colors.pinkAccent,
-              child: SizedBox(
-                width: 300,
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        children: [
-                          Column(
-                            children: [
-                              Container(
-                                child: Text(
-                                  'Sub Total    ',
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
-                              Text(
-                                'Dilivery Fee',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  color: Colors.black,
-                                ),
-                              ),
-                              Text(
-                                'Discount    ',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  color: Colors.black,
-                                ),
-                              ),
-                              Text(
-                                'Total           ',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            width: 50,
-                          ),
-                          Column(
-                            children: [
-                              Text(
-                                'Rs.25,000',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  color: Colors.black,
-                                ),
-                              ),
-                              Text(
-                                '-',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  color: Colors.black,
-                                ),
-                              ),
-                              Text(
-                                '-',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  color: Colors.black,
-                                ),
-                              ),
-                              Text(
-                                'Rs. 25,000',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            Divider(color: Colors.black),
-            SizedBox(height: screenHeight * 0.05),
-            Text(
-              " Get more offers by giving rating and comments to service providers.",
-              style: TextStyle(
-                color: Colors.black87,
-                fontWeight: FontWeight.w400,
-                fontSize: 17,
-              ),
-            ),
-            SizedBox(height: screenHeight * 0.06),
-            Card(
-                elevation: 50,
-                // shadowColor: Colors.black,
-                color: Colors.grey,
-                child: SizedBox(
-                    width: 300,
-                    height: 85,
-                    //height: height * 0.2,
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Column(children: [
-                        SizedBox(
-                          height: 10,
-                        ), //SizedBox
-                        //SizedBox
-                        Row(
+          ),
+          SizedBox(height: screenHeight * 0.05),
+          Divider(color: Colors.black),
+          Card(
+            elevation: 50,
+            shadowColor: Colors.black,
+            color: Colors.pinkAccent,
+            child: SizedBox(
+              width: 300,
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      children: [
+                        Column(
                           children: [
-                            Column(children: [
-                              Center(
-                                child: Container(
-                                  child: Text(
-                                    '     Add Comments',
-                                    style: TextStyle(
-                                        fontSize: 15, color: Colors.blueGrey),
-                                  ),
+                            Container(
+                              child: Text(
+                                'Sub Total    ',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  color: Colors.black,
                                 ),
-                              )
-                            ])
+                              ),
+                            ),
+                            Text(
+                              'Dilivery Fee',
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.black,
+                              ),
+                            ),
+                            Text(
+                              'Discount    ',
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.black,
+                              ),
+                            ),
+                            Text(
+                              'Total           ',
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.black,
+                              ),
+                            ),
                           ],
-                        )
-                      ]),
-                    ))),
-            ButtonBar(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 480.0),
-                  child: RaisedButton(
-                      child: Text("   View Comments   "),
-                      textColor: Colors.white,
-                      color: Color((0XFF128C7E)),
-                      onPressed: () {}),
+                        ),
+                        SizedBox(
+                          width: 50,
+                        ),
+                        Column(
+                          children: [
+                            Text(
+                              'Rs.25,000',
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.black,
+                              ),
+                            ),
+                            Text(
+                              '-',
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.black,
+                              ),
+                            ),
+                            Text(
+                              '-',
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.black,
+                              ),
+                            ),
+                            Text(
+                              'Rs. 25,000',
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
-          ],
-        ),
+          ),
+          Divider(color: Colors.black),
+          SizedBox(height: screenHeight * 0.05),
+          Text(
+            " Get more offers by giving rating and comments to service providers.",
+            style: TextStyle(
+              color: Colors.black87,
+              fontWeight: FontWeight.w400,
+              fontSize: 17,
+            ),
+          ),
+          SizedBox(height: 20),
+          ButtonBar(
+            children: [
+              RaisedButton(
+                  child: Text("Add Comments"),
+                  textColor: Colors.white,
+                  color: Colors.purple,
+                  onPressed: () {})
+            ],
+          ),
+        ]),
       ),
     );
   }

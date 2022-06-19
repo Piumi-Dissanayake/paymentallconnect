@@ -169,9 +169,7 @@ class _ReceiptsState extends State<Receipts> {
       Discount,
       Balance,
       Date}) async {
-    final docUser = FirebaseFirestore.instance
-        .collection('payments')
-        .doc('Create receipts');
+    final docUser = FirebaseFirestore.instance.collection('payments').doc();
     final json = {
       'serviceProviderName': ServiceProviderName,
       'userName': UserName,
@@ -180,9 +178,6 @@ class _ReceiptsState extends State<Receipts> {
       'discount': Discount,
       'balance': Balance,
       'date': Date,
-      // 'name': name,
-      // 'age': 21,
-      // 'birthday': DateTime(2001, 7, 28),
     };
 
     /// Create doc & write data to Firebase

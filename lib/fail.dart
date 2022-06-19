@@ -28,6 +28,7 @@ class _FailedPaymentsState extends State<FailedPayments> {
       body: Center(
         child: Column(
           children: <Widget>[
+            SizedBox(height: 20),
             Container(
               height: 70,
               padding: const EdgeInsets.only(left: 480.0, bottom: 100.0),
