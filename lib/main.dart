@@ -20,7 +20,7 @@ Future<void> main() async {
 
   Stripe.publishableKey =
       "pk_test_51LCMV7GXGWUd9WFl8RS29bMoqxxz4NiU55kjmNtUEF2STjcaY9HKyg9HpuQQJn8vQxe5h8Lr2TfjfCbow4GhMfcY00l7xb07h4";
-  await Stripe.instance.applySettings();
+  //await Stripe.instance.applySettings();
 
   await Firebase.initializeApp();
   runApp(MaterialApp(

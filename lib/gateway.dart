@@ -5,7 +5,9 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
+import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
+import 'package:paymentallconnect/controller/payment_controller.dart';
 
 class Gateway extends StatelessWidget {
   const Gateway({Key? key}) : super(key: key);
@@ -76,7 +78,10 @@ class PaymentPage extends StatelessWidget {
     //   }
     // }
 
-//////
+//
+//
+    final PaymentController controller = Get.put(PaymentController());
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Stripe Demo App"),
@@ -89,7 +94,8 @@ class PaymentPage extends StatelessWidget {
               style: ButtonStyle(
                 foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
               ),
-              onPressed: () async {
+              onPressed: () {
+                controller.makePayment(amount: '5', currency: 'USD');
                 ////////////////////////////
                 // await initPaymentSheet(context,
                 //     email: "example@gmail.com", amount: 200000);
