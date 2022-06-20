@@ -96,7 +96,7 @@ class PaymentPage extends StatelessWidget {
                 /////////////////////////
               },
               child: const Text(
-                'Buy Laptop for 2000 USD',
+                'Make Payment 2000 USD',
                 style: TextStyle(color: Colors.white),
               ),
             )
