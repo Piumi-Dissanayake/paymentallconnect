@@ -13,6 +13,7 @@ import 'package:paymentallconnect/carddetails.dart';
 import 'package:paymentallconnect/fail.dart';
 import 'package:paymentallconnect/gateway.dart';
 import 'package:paymentallconnect/receipt.dart';
+import 'package:paymentallconnect/report.dart';
 import 'package:paymentallconnect/success.dart';
 
 Future<void> main() async {
@@ -32,6 +33,7 @@ Future<void> main() async {
       '/success': (context) => SucessPayment(),
       '/fail': (context) => FailedPayments(),
       '/gateway': (context) => Gateway()
+      '/report': (context) => Report(),
     },
   ));
 }
