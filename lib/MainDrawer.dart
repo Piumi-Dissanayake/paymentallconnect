@@ -52,11 +52,11 @@ class _MainDrawerState extends State<MainDrawer> {
           ListTile(
             leading: Icon(Icons.receipt),
             title: Text(
-              'Receipts',
+              'Gateway',
               style: TextStyle(fontSize: 18),
             ),
             onTap: () {
-              Navigator.pushNamed(context, '/receipt');
+              Navigator.pushNamed(context, '/gateway');
             },
           ),
           ListTile(
