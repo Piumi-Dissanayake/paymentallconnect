@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:paymentallconnect/carddetails.dart';
 import 'package:paymentallconnect/fail.dart';
+import 'package:paymentallconnect/gateway.dart';
 import 'package:paymentallconnect/success.dart';
 import 'package:paymentallconnect/MainDrawer.dart';
 import 'package:flutter/cupertino.dart';
@@ -62,7 +63,7 @@ class receiptUser extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => (CardDetails())),
+                      MaterialPageRoute(builder: (context) => (Gateway())),
                     );
                   },
                 ),

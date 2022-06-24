@@ -52,6 +52,16 @@ class _MainDrawerState extends State<MainDrawer> {
           ListTile(
             leading: Icon(Icons.receipt),
             title: Text(
+              'Receipts',
+              style: TextStyle(fontSize: 18),
+            ),
+            onTap: () {
+              Navigator.pushNamed(context, '/receipt');
+            },
+          ),
+          /* ListTile(
+            leading: Icon(Icons.receipt),
+            title: Text(
               'Gateway',
               style: TextStyle(fontSize: 18),
             ),
@@ -88,9 +98,9 @@ class _MainDrawerState extends State<MainDrawer> {
             onTap: () {
               Navigator.pushNamed(context, '/fail');
             },
-          ),
+          ),*/
           ListTile(
-            leading: Icon(Icons.arrow_back),
+            leading: Icon(Icons.description),
             title: Text(
               'Report',
               style: TextStyle(fontSize: 18),

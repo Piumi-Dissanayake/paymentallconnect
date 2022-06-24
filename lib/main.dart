@@ -14,13 +14,14 @@ import 'package:paymentallconnect/fail.dart';
 import 'package:paymentallconnect/gateway.dart';
 import 'package:paymentallconnect/receipt.dart';
 import 'package:paymentallconnect/report.dart';
+
 import 'package:paymentallconnect/success.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   Stripe.publishableKey =
-      "pk_test_51LCMV7GXGWUd9WFl8RS29bMoqxxz4NiU55kjmNtUEF2STjcaY9HKyg9HpuQQJn8vQxe5h8Lr2TfjfCbow4GhMfcY00l7xb07h4";
+      "pk_test_51LDqSTEHLxB2oFbTzhAthLXp4T3ZNgcTJmXVsrMkDZ55jXJJmlBfV3z0Al7MdP6Qwl08Njzblt9WxsBmPrItwvYm00YaYiCVlU";
   //await Stripe.instance.applySettings();
 
   await Firebase.initializeApp();
@@ -32,7 +33,7 @@ Future<void> main() async {
       // '/carddetails': (context) => CardDetails(),
       '/success': (context) => SucessPayment(),
       '/fail': (context) => FailedPayments(),
-      '/gateway': (context) => Gateway()
+      '/gateway': (context) => Gateway(),
       '/report': (context) => Report(),
     },
   ));

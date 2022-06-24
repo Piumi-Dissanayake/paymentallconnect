@@ -8,6 +8,7 @@ import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:paymentallconnect/controller/payment_controller.dart';
+import 'package:paymentallconnect/success.dart';
 
 class Gateway extends StatelessWidget {
   const Gateway({Key? key}) : super(key: key);
@@ -15,7 +16,7 @@ class Gateway extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Stripe Demo',
+      title: 'Payment',
       theme: ThemeData(
         primarySwatch: Colors.purple,
       ),
@@ -29,62 +30,14 @@ class PaymentPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    /////////
-    // Future<void> initPaymentSheet(context,
-    //     {required String email, required int amount}) async {
-    //   try {
-    //     // 1. create payment intent on the server
-    //     final response = await http.post(
-    //         Uri.parse(
-    //             'https://us-central1-stripe-checkout-flutter.cloudfunctions.net/stripePaymentIntentRequest'),
-    //         body: {
-    //           'email': email,
-    //           'amount': amount.toString(),
-    //         });
-
-    //     final jsonResponse = jsonDecode(response.body);
-    //     log(jsonResponse.toString());
-
-    //     //2. initialize the payment sheet
-    //     await Stripe.instance.initPaymentSheet(
-    //       paymentSheetParameters: SetupPaymentSheetParameters(
-    //         paymentIntentClientSecret: jsonResponse['paymentIntent'],
-    //         merchantDisplayName: 'Flutter Stripe Store Demo',
-    //         customerId: jsonResponse['customer'],
-    //         customerEphemeralKeySecret: jsonResponse['ephemeralKey'],
-    //         style: ThemeMode.light,
-    //         testEnv: true,
-    //         merchantCountryCode: 'SG',
-    //       ),
-    //     );
-
-    //     await Stripe.instance.presentPaymentSheet();
-
-    //     ScaffoldMessenger.of(context).showSnackBar(
-    //       const SnackBar(content: Text('Payment completed!')),
-    //     );
-    //   } catch (e) {
-    //     if (e is StripeException) {
-    //       ScaffoldMessenger.of(context).showSnackBar(
-    //         SnackBar(
-    //           content: Text('Error from Stripe: ${e.error.localizedMessage}'),
-    //         ),
-    //       );
-    //     } else {
-    //       ScaffoldMessenger.of(context).showSnackBar(
-    //         SnackBar(content: Text('Error: $e')),
-    //       );
-    //     }
-    //   }
-    // }
-
-//
-//
     final PaymentController controller = Get.put(PaymentController());
 
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 245, 213, 249),
       appBar: AppBar(
-        title: const Text("Stripe Demo App"),
+        title: const Text("Payment"),
+        centerTitle: true,
+        backgroundColor: Colors.purple,
       ),
       body: Center(
         child: Column(
@@ -95,14 +48,10 @@ class PaymentPage extends StatelessWidget {
                 foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
               ),
               onPressed: () {
-                controller.makePayment(amount: '5', currency: 'USD');
-                ////////////////////////////
-                // await initPaymentSheet(context,
-                //     email: "example@gmail.com", amount: 200000);
-                /////////////////////////
+                controller.makePayment(amount: '10', currency: 'USD');
               },
               child: const Text(
-                'Make Payment 2000 USD',
+                'Make Payment',
                 style: TextStyle(color: Colors.white),
               ),
             )

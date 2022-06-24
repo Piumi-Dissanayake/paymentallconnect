@@ -26,7 +26,10 @@ class _ReportState extends State<Report> {
               SizedBox(
                 width: 20,
               ),
-              Text(data['balance'].toString())
+              // Text(data['Service Provider Name'].toString()),
+              // Text(data['User Name'].toString()),
+              // Text(data['Vehicle Fault'].toString()),
+              Text(data['balance'].toString()),
             ]),
           ));
         }
@@ -35,8 +38,11 @@ class _ReportState extends State<Report> {
     }
 
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 245, 213, 249),
       appBar: AppBar(
         title: Text('Report'),
+        centerTitle: true,
+        backgroundColor: Colors.purple,
       ),
       body: SafeArea(
         child: SingleChildScrollView(
