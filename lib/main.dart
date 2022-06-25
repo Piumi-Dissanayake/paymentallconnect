@@ -10,6 +10,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:paymentallconnect/MainDrawer.dart';
 import 'package:paymentallconnect/carddetails.dart';
+import 'package:paymentallconnect/checkout_order.dart';
 import 'package:paymentallconnect/fail.dart';
 import 'package:paymentallconnect/gateway.dart';
 import 'package:paymentallconnect/receipt.dart';
@@ -30,6 +31,7 @@ Future<void> main() async {
     routes: {
       '/': (context) => HomeScreen(),
       '/receipt': (context) => Receipts(),
+      '/order_receipt': (context) => checkoutorder(),
       // '/carddetails': (context) => CardDetails(),
       '/success': (context) => SucessPayment(),
       '/fail': (context) => FailedPayments(),

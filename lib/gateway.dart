@@ -11,7 +11,12 @@ import 'package:paymentallconnect/controller/payment_controller.dart';
 import 'package:paymentallconnect/success.dart';
 
 class Gateway extends StatelessWidget {
-  const Gateway({Key? key}) : super(key: key);
+  /*String Balance;
+
+  Gateway({
+required this.Balance,
+  });*/
+  //const Gateway({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

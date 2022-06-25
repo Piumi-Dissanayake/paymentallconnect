@@ -24,11 +24,20 @@ class _ReportState extends State<Report> {
             child: Row(children: [
               Text(data['date'].toString()),
               SizedBox(
-                width: 20,
+                width: 10,
               ),
-              // Text(data['Service Provider Name'].toString()),
-              // Text(data['User Name'].toString()),
-              // Text(data['Vehicle Fault'].toString()),
+              Text(data['serviceProviderName'].toString()),
+              SizedBox(
+                width: 10,
+              ),
+              Text(data['userName'].toString()),
+              SizedBox(
+                width: 10,
+              ),
+              Text(data['vehicleFault'].toString()),
+              SizedBox(
+                width: 10,
+              ),
               Text(data['balance'].toString()),
             ]),
           ));

@@ -59,6 +59,16 @@ class _MainDrawerState extends State<MainDrawer> {
               Navigator.pushNamed(context, '/receipt');
             },
           ),
+          ListTile(
+            leading: Icon(Icons.receipt),
+            title: Text(
+              'Order Receipts',
+              style: TextStyle(fontSize: 18),
+            ),
+            onTap: () {
+              Navigator.pushNamed(context, '/order_receipt');
+            },
+          ),
           /* ListTile(
             leading: Icon(Icons.receipt),
             title: Text(
