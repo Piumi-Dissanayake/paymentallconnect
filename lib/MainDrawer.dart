@@ -116,7 +116,7 @@ class _MainDrawerState extends State<MainDrawer> {
               style: TextStyle(fontSize: 18),
             ),
             onTap: () {
-              Navigator.pushNamed(context, '/report');
+              Navigator.pushNamed(context, '/report_daterange');
             },
           ),
         ],

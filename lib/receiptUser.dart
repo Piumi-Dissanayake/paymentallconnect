@@ -8,6 +8,9 @@ import 'package:paymentallconnect/MainDrawer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:date_time_picker/date_time_picker.dart';
 import 'package:paymentallconnect/receipt.dart';
+import 'package:pdf/pdf.dart';
+import 'package:pdf/widgets.dart' as pw;
+import 'package:printing/printing.dart';
 
 class receiptUser extends StatelessWidget {
   String Date,

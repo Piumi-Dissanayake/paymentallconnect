@@ -45,6 +45,8 @@ dependencies:
   get: ^4.6.1
   firebase_auth: ^3.3.8
   fluttertoast: ^8.0.9
+  pdf: ^3.8.1
+  printing: ^5.9.1
 
  
 
