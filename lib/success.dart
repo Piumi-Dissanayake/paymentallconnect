@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:paymentallconnect/carddetails.dart';
+import 'package:paymentallconnect/checkoutorder.dart';
 import 'package:paymentallconnect/fail.dart';
 import 'package:paymentallconnect/receipt.dart';
-import 'package:paymentallconnect/MainDrawer.dart';
 
 class SucessPayment extends StatefulWidget {
   const SucessPayment({Key? key}) : super(key: key);
@@ -171,7 +171,12 @@ class _SucessPaymentState extends State<SucessPayment> {
                   child: Text("Add Comments"),
                   textColor: Colors.white,
                   color: Colors.purple,
-                  onPressed: () {})
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => checkoutorder()),
+                    );
+                  })
             ],
           ),
         ]),

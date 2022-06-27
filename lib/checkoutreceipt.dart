@@ -1,28 +1,30 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:paymentallconnect/carddetails.dart';
-import 'package:paymentallconnect/fail.dart';
-import 'package:paymentallconnect/success.dart';
-
-import 'package:flutter/cupertino.dart';
 import 'package:date_time_picker/date_time_picker.dart';
-import 'package:paymentallconnect/receipt.dart';
+import 'package:paymentallconnect/carddetails.dart';
+import 'package:paymentallconnect/checkoutorder.dart';
 
-class receiptUser extends StatelessWidget {
+class checkoutreceipt extends StatelessWidget {
   String Date,
-      ServiceProviderName,
+      ServiceProviderID,
       UserName,
-      VehicleFault,
-      InspectionValue,
+      Item,
+      Quantity,
+      ContactNumber,
+      SubTotal,
+      DiliveryFee,
       Discount,
       Balance;
 
-  receiptUser({
+  checkoutreceipt({
     required this.Date,
-    required this.ServiceProviderName,
+    required this.ServiceProviderID,
     required this.UserName,
-    required this.VehicleFault,
-    required this.InspectionValue,
+    required this.Item,
+    required this.Quantity,
+    required this.ContactNumber,
+    required this.SubTotal,
+    required this.DiliveryFee,
     required this.Discount,
     required this.Balance,
   });
@@ -42,13 +44,16 @@ class receiptUser extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
             Text('Date : ${Date}'),
-            Text('Service Provider Name : ${ServiceProviderName}'),
+            Text('Service Provider ID : ${ServiceProviderID}'),
             Text('User Name : ${UserName}'),
-            Text('Vehicle Fault : ${VehicleFault}'),
+            Text('Item : ${Item}'),
+            Text('Item : ${Quantity}'),
+            Text('Contact Number : ${ContactNumber}'),
             SizedBox(
               height: 20,
             ),
-            Text('Inspection Value : ${InspectionValue}'),
+            Text('Sub Total : ${SubTotal}'),
+            Text('Dilivery Fee : ${DiliveryFee}'),
             Text('Discount : ${Discount}'),
             Text('Balance : ${Balance}'),
             SizedBox(height: 20),
@@ -72,7 +77,7 @@ class receiptUser extends StatelessWidget {
                   color: Colors.purple,
                   onPressed: () async {
                     CollectionReference _collectionRef =
-                        FirebaseFirestore.instance.collection('payments');
+                        FirebaseFirestore.instance.collection('orderpayments');
                     QuerySnapshot querySnapshot = await _collectionRef.get();
                     final allData =
                         querySnapshot.docs.map((doc) => doc.data()).toList();

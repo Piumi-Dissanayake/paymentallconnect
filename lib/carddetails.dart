@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:paymentallconnect/fail.dart';
 import 'package:paymentallconnect/receipt.dart';
 import 'package:paymentallconnect/success.dart';
-import 'package:paymentallconnect/MainDrawer.dart';
+
 import 'package:date_time_picker/date_time_picker.dart';
 
 class CardDetails extends StatefulWidget {
@@ -20,7 +20,7 @@ class _CardDetailsState extends State<CardDetails> {
   TextEditingController _Amount = new TextEditingController();
   TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-  bool status = false;
+  bool status = true;
 
   var child;
 

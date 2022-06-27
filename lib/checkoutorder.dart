@@ -1,32 +1,32 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/material.dart';
-import 'package:paymentallconnect/carddetails.dart';
-import 'package:paymentallconnect/fail.dart';
-import 'package:paymentallconnect/success.dart';
-
-import 'package:flutter/cupertino.dart';
 import 'package:date_time_picker/date_time_picker.dart';
-import 'package:paymentallconnect/receiptUser.dart';
+import 'package:flutter/material.dart';
+import 'package:paymentallconnect/checkoutreceipt.dart';
 
-class Receipts extends StatefulWidget {
-  const Receipts({Key? key}) : super(key: key);
+class checkoutorder extends StatefulWidget {
+  const checkoutorder({Key? key}) : super(key: key);
 
   @override
-  State<Receipts> createState() => _ReceiptsState();
+  State<checkoutorder> createState() => _checkoutorderState();
 }
 
-class _ReceiptsState extends State<Receipts> {
+class _checkoutorderState extends State<checkoutorder> {
   var _date = DateTime.now().toString();
-  TextEditingController _ServiceProviderName = new TextEditingController();
+  TextEditingController _ServiceProviderID = new TextEditingController();
   TextEditingController _UserName = new TextEditingController();
-  TextEditingController _VehicleFault = new TextEditingController();
-  TextEditingController _Inspection = new TextEditingController();
+  TextEditingController _Item = new TextEditingController();
+  TextEditingController _Quantity = new TextEditingController();
+  TextEditingController _ContactNumber = new TextEditingController();
+  TextEditingController _SubTotal = new TextEditingController();
+  TextEditingController _DiliveryFee = new TextEditingController();
   TextEditingController _Discount = new TextEditingController();
   TextEditingController _balance = new TextEditingController();
 
-  double inspectionvalue = 0.0;
+  double subTotal = 0.0;
 
-  double discountvalue = 0.0;
+  double diliveryFee = 0.0;
+
+  double discountValue = 0.0;
 
   double resultValue = 0.0;
 
@@ -36,7 +36,7 @@ class _ReceiptsState extends State<Receipts> {
   Widget build(BuildContext context) => Scaffold(
       backgroundColor: Color.fromARGB(255, 245, 213, 249),
       appBar: AppBar(
-        title: Text('Receipt Details'),
+        title: Text('Checkout Order'),
         centerTitle: true,
         backgroundColor: Colors.purple,
       ),
@@ -47,7 +47,7 @@ class _ReceiptsState extends State<Receipts> {
           firstDate: DateTime(2000),
           lastDate: DateTime(2100),
           icon: Icon(Icons.calendar_today),
-          dateLabelText: 'Expiration Date',
+          dateLabelText: ' Date',
           onChanged: (val) {
             print(_date);
             setState(() {
@@ -63,7 +63,7 @@ class _ReceiptsState extends State<Receipts> {
         Padding(
             padding: const EdgeInsets.all(0.0),
             child: TextField(
-                controller: _ServiceProviderName,
+                controller: _ServiceProviderID,
                 decoration: InputDecoration(
                     icon: Icon(Icons.people),
                     labelText: ' Service Provider Name'))),
@@ -76,20 +76,34 @@ class _ReceiptsState extends State<Receipts> {
         Padding(
             padding: const EdgeInsets.all(0.0),
             child: TextField(
-                controller: _VehicleFault,
+                controller: _Item,
                 decoration: InputDecoration(
-                    icon: Icon(Icons.description),
-                    labelText: 'Vehicle Fault'))),
-        SizedBox(
-          height: 20,
-        ),
+                    icon: Icon(Icons.description), labelText: 'Item '))),
         Padding(
             padding: const EdgeInsets.all(0.0),
             child: TextField(
-                controller: _Inspection,
+                controller: _Quantity,
+                decoration: InputDecoration(
+                    icon: Icon(Icons.description), labelText: 'Quantity '))),
+        Padding(
+            padding: const EdgeInsets.all(0.0),
+            child: TextField(
+                controller: _ContactNumber,
                 decoration: InputDecoration(
                     icon: Icon(Icons.description),
-                    labelText: 'Inspection Value'))),
+                    labelText: 'Contact Number'))),
+        Padding(
+            padding: const EdgeInsets.all(0.0),
+            child: TextField(
+                controller: _SubTotal,
+                decoration: InputDecoration(
+                    icon: Icon(Icons.description), labelText: 'Sub Total'))),
+        Padding(
+            padding: const EdgeInsets.all(0.0),
+            child: TextField(
+                controller: _DiliveryFee,
+                decoration: InputDecoration(
+                    icon: Icon(Icons.description), labelText: 'Dilivery Fee'))),
         Padding(
             padding: const EdgeInsets.all(0.0),
             child: TextField(
@@ -110,35 +124,39 @@ class _ReceiptsState extends State<Receipts> {
         ButtonBar(
           children: [
             RaisedButton(
-              child: Text("Send Details"),
+              child: Text("Pay Now"),
               textColor: Colors.white,
               color: Colors.purple,
               onPressed: () {
-                inspectionvalue = double.parse(_Inspection.text);
-                discountvalue = double.parse(_Discount.text);
+                subTotal = double.parse(_SubTotal.text);
+                diliveryFee = double.parse(_DiliveryFee.text);
+                discountValue = double.parse(_Discount.text);
 
-                /* resultValue =
-                      balanceValue - (inspectionvalue - discountvalue);*/
-
-                resultValue = (inspectionvalue - discountvalue);
+                resultValue = ((subTotal + diliveryFee) - discountValue);
 
                 setState(() {
                   balanceValue = resultValue;
                 });
 
-                final ServiceProviderName = _ServiceProviderName.text;
+                final ServiceProviderID = _ServiceProviderID.text;
                 final UserName = _UserName.text;
-                final VehicleFault = _VehicleFault.text;
-                final InspectionValue = _Inspection.text;
+                final Item = _Item.text;
+                final Quantity = _Quantity.text;
+                final ContactNumber = _ContactNumber.text;
+                final SubTotal = _SubTotal.text;
+                final DiliveryFee = _DiliveryFee.text;
                 final Discount = _Discount.text;
                 final Balance = resultValue.toString();
                 final Date = _date;
 
                 createUser(
-                  ServiceProviderName: ServiceProviderName,
+                  ServiceProviderID: ServiceProviderID,
                   UserName: UserName,
-                  VehicleFault: VehicleFault,
-                  InspectionValue: InspectionValue,
+                  Item: Item,
+                  Quantity: Quantity,
+                  ContactNumber: ContactNumber,
+                  SubTotal: SubTotal,
+                  DiliveryFee: DiliveryFee,
                   Discount: Discount,
                   Balance: Balance,
                   Date: Date,
@@ -146,11 +164,14 @@ class _ReceiptsState extends State<Receipts> {
 
                 print("the selected date is ${_date}");
                 Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => receiptUser(
-                          ServiceProviderName: _ServiceProviderName.text,
+                    builder: (context) => checkoutreceipt(
+                          ServiceProviderID: _ServiceProviderID.text,
                           UserName: _UserName.text,
-                          VehicleFault: _VehicleFault.text,
-                          InspectionValue: _Inspection.text,
+                          Item: _Item.text,
+                          Quantity: _Quantity.text,
+                          ContactNumber: _ContactNumber.text,
+                          SubTotal: _SubTotal.text,
+                          DiliveryFee: _DiliveryFee.text,
                           Discount: _Discount.text,
                           Balance: resultValue.toString(),
                           Date: _date,
@@ -162,19 +183,26 @@ class _ReceiptsState extends State<Receipts> {
       ])));
 
   Future createUser(
-      {required String ServiceProviderName,
+      {required String ServiceProviderID,
       UserName,
-      VehicleFault,
-      InspectionValue,
+      Item,
+      Quantity,
+      ContactNumber,
+      SubTotal,
+      DiliveryFee,
       Discount,
       Balance,
       Date}) async {
-    final docUser = FirebaseFirestore.instance.collection('payments').doc();
+    final docUser =
+        FirebaseFirestore.instance.collection('orderpayments').doc();
     final json = {
-      'serviceProviderName': ServiceProviderName,
+      'serviceProviderID': ServiceProviderID,
       'userName': UserName,
-      'vehicleFault': VehicleFault,
-      'inspectionValue': InspectionValue,
+      'Item': Item,
+      'Quantity': Quantity,
+      'ContactNumber': ContactNumber,
+      'SubTotal': SubTotal,
+      'DiliveryFee': DiliveryFee,
       'discount': Discount,
       'balance': Balance,
       'date': Date,

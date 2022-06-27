@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:paymentallconnect/receipt.dart';
 import 'package:paymentallconnect/success.dart';
 import 'package:paymentallconnect/carddetails.dart';
-import 'package:paymentallconnect/MainDrawer.dart';
 
 class FailedPayments extends StatefulWidget {
   const FailedPayments({Key? key}) : super(key: key);

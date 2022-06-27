@@ -2,7 +2,7 @@
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:paymentallconnect/MainDrawer.dart';
+
 import 'package:paymentallconnect/carddetails.dart';
 import 'package:paymentallconnect/fail.dart';
 import 'package:paymentallconnect/receipt.dart';
@@ -14,8 +14,8 @@ Future<void> main() async {
   runApp(MaterialApp(
     initialRoute: '/',
     routes: {
-      '/': (context) => HomeScreen(),
-      '/receipt': (context) => Receipts(),
+      '/': (context) => Receipts(),
+      //'/receipt': (context) => Receipts(),
       '/carddetails': (context) => CardDetails(),
       '/success': (context) => SucessPayment(),
       '/fail': (context) => FailedPayments(),
@@ -40,7 +40,6 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: true,
         backgroundColor: Colors.purple,
       ),
-      drawer: MainDrawer(),
     );
   }
 }
