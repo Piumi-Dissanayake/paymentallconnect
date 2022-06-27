@@ -70,13 +70,14 @@ class receiptUser extends StatelessWidget {
                   child: Text("Report"),
                   textColor: Colors.white,
                   color: Colors.purple,
-                  onPressed: () async {
-                    CollectionReference _collectionRef =
-                        FirebaseFirestore.instance.collection('payments');
-                    QuerySnapshot querySnapshot = await _collectionRef.get();
-                    final allData =
-                        querySnapshot.docs.map((doc) => doc.data()).toList();
-                    print(allData);
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/report');
+                    // CollectionReference _collectionRef =
+                    //     FirebaseFirestore.instance.collection('payments');
+                    // QuerySnapshot querySnapshot = await _collectionRef.get();
+                    // final allData =
+                    //     querySnapshot.docs.map((doc) => doc.data()).toList();
+                    // print(allData);
                   },
                 ),
               ],

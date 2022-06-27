@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:paymentallconnect/carddetails.dart';
 import 'package:paymentallconnect/fail.dart';
 import 'package:paymentallconnect/receipt.dart';
+import 'package:paymentallconnect/report.dart';
 import 'package:paymentallconnect/success.dart';
 
 Future<void> main() async {
@@ -19,6 +20,7 @@ Future<void> main() async {
       '/carddetails': (context) => CardDetails(),
       '/success': (context) => SucessPayment(),
       '/fail': (context) => FailedPayments(),
+      '/report': (context) => Report(),
     },
   ));
 }
